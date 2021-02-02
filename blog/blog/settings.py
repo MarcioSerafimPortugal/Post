@@ -1,5 +1,7 @@
 from pathlib import Path
 
+import os
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = '5^ghtbn5mgz8ji707w1wryg+14h$3m22_v*hcrt=4anmklm4sh'
@@ -33,7 +35,7 @@ ROOT_URLCONF = 'blog.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates_all'],
+        'DIRS': ['tempaltes'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -81,3 +83,7 @@ USE_L10N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+MEDIA_URL = '/media/'
